@@ -1,0 +1,79 @@
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+.card {
+  background: white;
+  border-radius: 22px;
+  border: 1px solid rgba(15, 47, 51, 0.12);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.10);
+  padding: 3rem;
+}
+
+h1 {
+  margin: 0;
+  color: #0f2f33;
+}
+
+.muted {
+  margin: 0.5rem 0 1.4rem 0;
+  color: rgba(15, 47, 51, 0.7);
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 0.9rem;
+  font-weight: 800;
+  color: rgba(15, 47, 51, 0.8);
+}
+
+input {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 47, 51, 0.18);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: none;
+  background: #0f2f33;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.alert {
+  background: rgba(176, 0, 32, 0.10);
+  border: 1px solid rgba(176, 0, 32, 0.18);
+  color: #8b0018;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.small {
+  margin-top: 1rem;
+  color: rgba(15, 47, 51, 0.7);
+  font-weight: 600;
+}
+
+.small a {
+  color: #13494d;
+  font-weight: 900;
+  text-decoration: none;
+}

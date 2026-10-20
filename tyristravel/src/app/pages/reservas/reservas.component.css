@@ -1,0 +1,163 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.head h1 {
+  margin: 0;
+  color: #0f2f33;
+  font-size: 2rem;
+}
+
+.head p {
+  margin: 0.4rem 0 0 0;
+  color: rgba(15, 47, 51, 0.7);
+  font-weight: 600;
+}
+
+.error {
+  color: #b00020;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.empty {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid rgba(15, 47, 51, 0.12);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+}
+
+.empty h2 {
+  margin: 0;
+  color: #0f2f33;
+}
+
+.empty p {
+  margin: 0.6rem 0 0 0;
+  color: rgba(15, 47, 51, 0.7);
+}
+
+.grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid rgba(15, 47, 51, 0.12);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+}
+
+.img {
+  height: 150px;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.body {
+  padding: 1rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.top h3 {
+  margin: 0;
+  color: #0f2f33;
+  font-size: 1.1rem;
+}
+
+.meta {
+  margin: 0.35rem 0 0 0;
+  color: rgba(15, 47, 51, 0.65);
+  font-weight: 700;
+}
+
+.price {
+  margin: 0.8rem 0 0 0;
+  font-weight: 900;
+  color: #0f2f33;
+  font-size: 1.1rem;
+}
+
+.bottom {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(15, 47, 51, 0.7);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.estado {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.estado.pending {
+  background: rgba(247,201,72,0.18);
+  color: #8a6a00;
+}
+
+.estado.ok {
+  background: rgba(0, 180, 170, 0.18);
+  color: #0b5f5a;
+}
+
+.estado.bad {
+  background: rgba(176, 0, 32, 0.12);
+  color: #8b0018;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.cancel {
+  margin-top: 0.9rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(176, 0, 32, 0.22);
+  background: rgba(176, 0, 32, 0.08);
+  color: #8b0018;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+.delete {
+  margin-top: 0.9rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #0f2f33;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}

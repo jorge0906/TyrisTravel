@@ -1,0 +1,128 @@
+<section class="page">
+ 
+
+  @if (cargando) {
+    <p>Cargando destino...</p>
+  }
+
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  }
+
+  @if (!cargando && !error && destino) {
+    <div class="layout">
+      <div class="image">
+        <img [src]="getImagen()" [alt]="destino.nombre">
+      </div>
+
+      <div class="info">
+        <div class="top">
+          <h1>{{ destino.nombre }}</h1>
+          @if (destino.categoria_nombre) {
+            <span class="pill">{{ destino.categoria_nombre }}</span>
+          }
+        </div>
+
+        @if (destino.descripcion) {
+          <p class="desc">{{ destino.descripcion }}</p>
+        }
+
+        <div class="grid">
+          <div class="row">
+            <span class="k">ID</span>
+            <span class="v">{{ destino.id_destino }}</span>
+          </div>
+
+        
+          @if (destino.precio != null) {
+            <div class="row">
+              <span class="k">Precio</span>
+              <span class="v">{{ destino.precio }} €</span>
+            </div>
+          }
+
+          @if (destino.duracion_dias) {
+            <div class="row">
+              <span class="k">Duración</span>
+              <span class="v">{{ destino.duracion_dias }} días</span>
+            </div>
+          }
+
+          @if (destino.pais) {
+            <div class="row">
+              <span class="k">País</span>
+              <span class="v">{{ destino.pais }}</span>
+            </div>
+          }
+
+          @if (destino.ciudad) {
+            <div class="row">
+              <span class="k">Ciudad</span>
+              <span class="v">{{ destino.ciudad }}</span>
+            </div>
+          }
+
+          @if (destino.fecha_salida) {
+            <div class="row">
+              <span class="k">Fecha salida</span>
+              <span class="v">{{ destino.fecha_salida }}</span>
+            </div>
+          }
+
+          @if (destino.fecha_llegada) {
+            <div class="row">
+              <span class="k">Fecha llegada</span>
+              <span class="v">{{ destino.fecha_llegada }}</span>
+            </div>
+          }
+
+          @if (destino.plazas_disponibles != null) {
+            <div class="row">
+              <span class="k">Plazas disponibles</span>
+              <span class="v">{{ destino.plazas_disponibles }}</span>
+            </div>
+          }
+
+          @if (destino.hotel) {
+            <div class="row">
+              <span class="k">Hotel</span>
+              <span class="v">{{ destino.hotel }}</span>
+            </div>
+          }
+
+          @if (destino.transporte) {
+            <div class="row">
+              <span class="k">Transporte</span>
+              <span class="v">{{ destino.transporte }}</span>
+            </div>
+          }
+
+          @if (destino.incluye) {
+            <div class="row full">
+              <span class="k">Incluye</span>
+              <span class="v">{{ destino.incluye }}</span>
+            </div>
+          }
+
+          @if (destino.no_incluye) {
+            <div class="row full">
+              <span class="k">No incluye</span>
+              <span class="v">{{ destino.no_incluye }}</span>
+            </div>
+          }
+
+         
+        </div>
+
+        <div class="actions">
+         <button class="btn primary" (click)="reservar()">Reservar</button>
+
+
+         <button class="btn secondary" routerLink="/destinos">Volver</button>
+
+
+        </div>
+      </div>
+    </div>
+  }
+</section>

@@ -1,0 +1,29 @@
+<section class="page">
+  <div class="card">
+    <h1>Crear cuenta</h1>
+    <p class="muted">Regístrate para guardar y gestionar tus reservas.</p>
+
+    @if (error) {
+      <div class="alert">{{ error }}</div>
+    }
+
+    <form (ngSubmit)="submit()">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="nombre" name="nombre" required>
+
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" name="email" required>
+
+      <label>Contraseña</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+
+      <button class="btn" type="submit" [disabled]="cargando">
+        @if (cargando) { Creando cuenta... } @else { Registrarme }
+      </button>
+    </form>
+
+    <p class="small">
+      ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a>
+    </p>
+  </div>
+</section>

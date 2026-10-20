@@ -1,0 +1,57 @@
+<section class="page">
+  <div class="head">
+    <h1>Mis reservas</h1>
+    <p>Historial de tus reservas realizadas.</p>
+  </div>
+
+  @if (cargando) {
+    <p>Cargando reservas...</p>
+  }
+
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  }
+
+  @if (!cargando && !error) {
+    @if (reservas.length === 0) {
+      <div class="empty">
+        <h2>No tienes reservas todavía</h2>
+        <p>Cuando reserves un destino, aparecerá aquí.</p>
+      </div>
+    } @else {
+      <div class="grid">
+        @for (r of reservas; track r.id_reserva) {
+          <article class="card">
+            <div class="img">
+              <img [src]="getImagen(r)" [alt]="r.destino_nombre">
+            </div>
+
+            <div class="body">
+              <div class="top">
+                <h3>{{ r.destino_nombre }}</h3>
+                <span class="estado" [class]="estadoClass(r.estado)">{{ r.estado }}</span>
+              </div>
+
+              @if (r.categoria_nombre) {
+                <p class="meta">{{ r.categoria_nombre }}</p>
+              }
+
+              <p class="price">{{ r.destino_precio }} €</p>
+
+              <div class="bottom">
+                <span class="id">Reserva #{{ r.id_reserva }}</span>
+                <span class="date">{{ r.fecha_reserva }}</span>
+              </div>
+
+              @if (esCancelada(r)) {
+                <button class="delete" type="button" (click)="borrar(r.id_reserva)">Borrar</button>
+              } @else {
+                <button class="cancel" type="button" (click)="cancelar(r.id_reserva)">Cancelar</button>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    }
+  }
+</section>

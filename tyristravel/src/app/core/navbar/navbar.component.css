@@ -1,0 +1,147 @@
+/* ============================= */
+/* NAVBAR PRINCIPAL */
+/* ============================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px; /* más estrecho */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo izquierda / menú derecha */
+  padding: 0 2.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #0f2f33, #13494d);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  background: white;
+  border-radius: 12px;
+  padding: 0 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: 0.2s ease;
+}
+
+.logo img {
+  height: 60px;
+  display: block;
+  transition: 0.2s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* LINKS DEL MENÚ */
+/* ============================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links normales */
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+/* Línea animada debajo */
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #f7c948, #ffb703);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #f7c948;
+}
+
+/* ============================= */
+/* TEXTO HOLA USUARIO */
+/* ============================= */
+
+.hello {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+/* ============================= */
+/* BOTÓN SALIR */
+/* ============================= */
+
+.nav-btn {
+  border: none;
+  background: #f7c948;
+  color: #0f2f33;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #ffb703;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+}

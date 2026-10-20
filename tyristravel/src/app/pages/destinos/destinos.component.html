@@ -1,0 +1,39 @@
+<section class="page">
+  <h1>Destinos</h1>
+<div class="filters">
+  <label>Categoría</label>
+
+  <select [(ngModel)]="categoriaSeleccionada" (ngModelChange)="filtrar()">
+    <option [ngValue]="null">Todas</option>
+
+    @for (c of categorias; track c.id) {
+      <option [ngValue]="c.id">{{ c.nombre }}</option>
+    }
+  </select>
+</div>
+
+
+
+  @if (cargando) {
+    <p>Cargando destinos...</p>
+  }
+
+  @if (error) {
+    <p>{{ error }}</p>
+  }
+
+  @if (!cargando && !error) {
+    <div class="grid">
+      @for (d of destinosFiltrados; track d.id_destino) {
+
+        <a class="card" [routerLink]="['/destinos', d.id_destino]">
+          <div class="card-img">  <img [src]="getImagen(d)" [alt]="d.nombre"></div>
+          <div class="card-body">
+            <h3>{{ d.nombre }}</h3>
+            <p class="price">{{ d.precio }} €</p>
+          </div>
+        </a>
+      }
+    </div>
+  }
+</section>

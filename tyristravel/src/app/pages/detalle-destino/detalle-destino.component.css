@@ -1,0 +1,145 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back {
+  display: inline-block;
+  text-decoration: none;
+  color: #13494d;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.error {
+  color: #b00020;
+  font-weight: 700;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+}
+
+.image {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 47, 51, 0.12);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+  height: 420px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  background: white;
+  border-radius: 22px;
+  border: 1px solid rgba(15, 47, 51, 0.12);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top h1 {
+  margin: 0;
+  color: #0f2f33;
+  font-size: 2rem;
+}
+
+.pill {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(15, 47, 51, 0.08);
+  color: #0f2f33;
+  font-weight: 800;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.desc {
+  margin: 1rem 0 0 0;
+  color: rgba(15, 47, 51, 0.75);
+  line-height: 1.5;
+}
+
+.grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: 16px;
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 47, 51, 0.12);
+  background: rgba(15, 47, 51, 0.03);
+}
+
+.row.full {
+  grid-column: 1 / -1;
+}
+
+.k {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-weight: 800;
+}
+
+.v {
+  font-weight: 800;
+  color: #0f2f33;
+}
+
+.actions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0f2f33;
+  color: white;
+}
+
+.btn.secondary {
+  background: white;
+  color: #0f2f33;
+  border-color: rgba(15, 47, 51, 0.18);
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .image {
+    height: 280px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

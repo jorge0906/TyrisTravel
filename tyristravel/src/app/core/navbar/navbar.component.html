@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="logo">
+      <img src="/assets/logotransparente.png" alt="TyrisTravel">
+    </div>
+  </div>
+
+
+<ul class="nav-links">
+  <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+  <li><a routerLink="/destinos" routerLinkActive="active">Destinos</a></li>
+
+  @if (auth.getUser()) {
+    <li><a routerLink="/reservas" routerLinkActive="active">Reservas</a></li>
+    <li class="hello">Hola {{ auth.getUser()?.nombre }}</li>
+    <li><button class="nav-btn" type="button" (click)="logout()">Salir</button></li>
+  } @else {
+    <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li><a routerLink="/registro" routerLinkActive="active">Registro</a></li>
+  }
+</ul>
+
+</nav>

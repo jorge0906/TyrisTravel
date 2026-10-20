@@ -1,0 +1,163 @@
+<section class="home-hero">
+  <div class="home-menu">
+    <nav class="home-links">
+      <a routerLink="/destinos">Destinos</a>
+      <a routerLink="/reservas">Reservas</a>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/registro">Registrarse</a>
+    </nav>
+  </div>
+
+  <div class="home-overlay">
+    <h1>Explora el mundo con TyrisTravel</h1>
+    <p>Descubre destinos únicos y organiza tu próxima aventura.</p>
+    <a class="home-btn" routerLink="/destinos">Ver destinos</a>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="badge">Agencia de viajes</p>
+    <h1>Explora el mundo con TyrisTravel</h1>
+    <p class="subtitle">
+      Descubre destinos únicos, compara propuestas y organiza tu próxima aventura de forma fácil.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn primary" routerLink="/destinos">Ver destinos</a>
+      <a class="btn secondary" routerLink="/contacto">Contactar</a>
+    </div>
+
+    <div class="search-card">
+      <div class="field">
+        <label>Destino</label>
+        <input [(ngModel)]="q" type="text" placeholder="Ej: París, Tokio, Nueva York">
+      </div>
+
+      <div class="field">
+        <label>Categoría</label>
+        <select [(ngModel)]="categoria">
+          <option value="">Todas</option>
+          <option value="Europa">Europa</option>
+          <option value="Asia">Asia</option>
+          <option value="América">América</option>
+          <option value="África">África</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Presupuesto</label>
+        <select [(ngModel)]="presupuesto">
+          <option value="">Cualquiera</option>
+          <option value="0-500">Hasta 500€</option>
+          <option value="500-1000">500€ - 1000€</option>
+          <option value="1000-2000">1000€ - 2000€</option>
+          <option value="2000+">+2000€</option>
+        </select>
+      </div>
+
+      <button class="btn primary" type="button" (click)="buscar()">Buscar</button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-image">
+      <img src="/assets/portada.png" alt="Familia viajando con TyrisTravel">
+    </div>
+
+    <div class="visual-card">
+      <p class="visual-title">Top recomendados</p>
+
+      @if (topRecomendados.length === 0) {
+        <p class="muted">Cargando...</p>
+      } @else {
+        <div class="mini-list">
+          @for (d of topRecomendados; track d.id_destino) {
+            <div class="mini-item">
+              <div class="dot"></div>
+              <div>
+                <p class="mini-name">{{ d.nombre }}</p>
+                <p class="mini-meta">{{ d.duracion_dias }} días · desde {{ d.precio }}€</p>
+              </div>
+            </div>
+          }
+        </div>
+      }
+
+      <div class="rating-row">
+        <span class="rating">4.7</span>
+        <span class="rating-text">Valoración media</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Categorías</h2>
+    <p>Encuentra el estilo de viaje que más se adapta a ti.</p>
+  </div>
+
+  <div class="grid-cats">
+    <a class="cat" routerLink="/destinos">
+      <p class="cat-title">Europa</p>
+      <p class="cat-sub">Ciudades, cultura y escapadas</p>
+    </a>
+    <a class="cat" routerLink="/destinos">
+      <p class="cat-title">Asia</p>
+      <p class="cat-sub">Tradición, tecnología y sabores</p>
+    </a>
+    <a class="cat" routerLink="/destinos">
+      <p class="cat-title">América</p>
+      <p class="cat-sub">Rascacielos, naturaleza y rutas</p>
+    </a>
+    <a class="cat" routerLink="/destinos">
+      <p class="cat-title">África</p>
+      <p class="cat-sub">Desiertos, historia y aventura</p>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Destinos destacados</h2>
+    <p>Propuestas seleccionadas para inspirarte.</p>
+  </div>
+
+  <div class="grid-cards">
+    @for (d of destacados; track d.id_destino) {
+      <article class="card">
+        <div class="card-img">
+          <img [src]="getImagen(d)" [alt]="d.nombre">
+        </div>
+
+        <div class="card-body">
+          <div class="card-top">
+            <h3>{{ d.nombre }}</h3>
+            @if (d.categoria) {
+              <span class="pill">{{ d.categoria }}</span>
+            }
+          </div>
+
+          <p class="card-text">{{ d.descripcion }}</p>
+
+          <div class="card-bottom">
+            <span class="price">Desde {{ d.precio }}€</span>
+            <a class="link" [routerLink]="['/destinos', d.id_destino]">Ver más</a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-content">
+    <h2>¿Listo para tu próxima escapada?</h2>
+    <p>Explora todos los destinos y guarda tus favoritos.</p>
+    <div class="cta-actions">
+      <a class="btn primary" routerLink="/destinos">Explorar destinos</a>
+      <a class="btn secondary" routerLink="/login">Iniciar sesión</a>
+    </div>
+  </div>
+</section>
