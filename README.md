@@ -1,7 +1,6 @@
 # 🌍 TyrisTravel
 
 ![Licencia](https://img.shields.io/badge/licencia-MIT-blue.svg)
-![Estado](https://img.shields.io/badge/estado-en_desarrollo-green.svg)
 
 **TyrisTravel** es una aplicación orientada a la gestión y reserva de experiencias turísticas y viajes, pensada para ofrecer una navegación ágil e intuitiva a los usuarios.
 
